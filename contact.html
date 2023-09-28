@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('Cont_back.png');
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 80%;
+        }
+
+        .box {
+            background-color: #393dc4;
+            color: #fff;
+            text-align: center;
+            font-size: larger;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .box:hover {
+            transform: scale(1.3);
+        }
+
+        .box1 {
+            background-image: url(Insta.png);
+        }
+
+        .box2 {
+            background-image: url(Github.png);
+        }
+
+        .box3 {
+            background-image: url(LinkedIn.png);
+
+        }
+
+        .contact-box {
+            width: 300px;
+        }
+
+        .contact-box h2 {
+            font-size: 20px;
+        }
+
+        .contact-box a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            background-color: #3086e9;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="box box1" onclick="openLink('https://www.instagram.com/rc__2004__/')">
+            <div class="contact-box">
+                <h2>Instagram</h2>
+                <a href="https://www.instagram.com/rc__2004__/" target="_blank">Visit</a>
+            </div>
+        </div>
+        <div class="box box2" onclick="openLink('https://github.com/Epik-Whale463')">
+            <div class="contact-box">
+                <h2>GitHub</h2>
+                <a href="https://github.com/Epik-Whale463" target="_blank">Visit</a>
+            </div>
+        </div>
+
+        <div class="box box3" onclick="openLink('https://www.linkedin.com/in/rama-charan-p-50425021b/')">
+            <div class="contact-box">
+                <h2>LinkedIn</h2>
+                <a href="https://www.linkedin.com/in/rama-charan-p-50425021b/" target="_blank">Visit</a>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        function openLink(link) {
+            window.open(link, '_blank');
+        }
+    </script>
+</body>
+</html>

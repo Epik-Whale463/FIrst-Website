@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    /* Add the background image to the body */
+    body {
+      margin: 0;
+      background-image: url('wall.jpg'); /* Replace 'your-image.jpg' with your image path or URL */
+      background-size: cover; /* Cover the entire viewport */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-attachment: fixed; /* Fixed background */
+    }
+
+    /* Styles for the "Notices" heading */
+    .notices-heading {
+      position: absolute;
+      top: 25%;
+      right: 200px; /* Adjust the right position as needed */
+      transform: translateY(-50%);
+      background-color: #ffffff;
+      color: rgb(70, 141, 246);
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 13px; /* Increase the border-radius to make it a capsule shape */
+      font-size: 40px;
+      transition: opacity 0.45s;
+      box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.19);
+
+    }
+
+    .container {
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .bar1, .bar2, .bar3 {
+      width: 30px;
+      height: 9px;
+      background-color: #fffffff9;
+      margin: 6px 0;
+      transition: 0.2s; /* Faster transition for bars */
+      padding-right: 20px;
+    }
+
+    .icon-bar {
+      width: 250px; /* Adjust the width as needed */
+      background-color: rgba(125, 118, 118, 0.9); /* Add a semi-transparent background color to the toolbar */
+      overflow: hidden;
+      transition: 2s; /* Smoother and slower transition for toolbar */
+      position: fixed;
+      top: 0;
+      left: -250px; /* Initially hidden off-screen */
+      height: 100%;
+      z-index: 1; /* Ensure the sidebar is behind the bars */
+    }
+
+    .icon-bar.show {
+      left: 0; /* Show the sidebar */
+    }
+
+    .icon-bar a {
+      text-align: left;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      padding: 20px;
+      transition: all 0.3s ease;
+      color: rgb(255, 255, 255);
+      font-size: 23px;
+      font-weight: bold;
+      display: block;
+      text-decoration: none; /* Remove underlines */
+      text-shadow: 9px 6px 10px rgb(0, 0, 0); /* Add text shadow */
+    }
+
+    .icon-bar a i {
+      color: #2640eb; /* Set icon color */
+      margin-right: 10px; /* Add some spacing between text and icon */
+    }
+
+    .icon-bar a:hover {
+      background-color: #04AA6D;
+    }
+
+    /* Style for the "Contact us" link at the bottom */
+    .icon-bar a.contact-us {
+      position: absolute;
+      bottom: 0;
+      color: #efff3b;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      padding-right: 80px;
+      font-size:larger;
+    }
+
+    /* Styles for continuously moving text about charity */
+    .moving-text {
+      position: absolute;
+      font-size: 70px; /* Increase the font size */
+      color: #dc836f; /* Change text color */
+      left: 0; /* Start from the left edge */
+      top: 50%; /* Center vertically */
+      animation: moveText 10s linear infinite; /* Add horizontal text movement animation */
+    }
+
+    @keyframes moveText {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    /* Add this media query to adjust styles for screens up to 768px wide (typical for mobile) */
+@media (max-width: 768px) {
+  .container {
+    top: 10px; /* Adjust top spacing for the menu button on mobile */
+  }
+
+  /* Adjust other styles as needed for mobile */
+  .icon-bar {
+    width: 80%; /* Make the sidebar take up most of the screen width on mobile */
+  }
+
+  .icon-bar.show {
+    left: 0;
+  }
+
+  /* Add more mobile-specific adjustments here */
+}
+
+/* New styles for the Login/Register button */
+.login-register-button {
+  position: absolute;
+  top: 20px; /* Adjust the top position as needed */
+  right: 20px; /* Adjust the right position as needed */
+  background-color: #1a3ddb;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 90px; /* Increase the border-radius to make it a capsule shape */
+  font-size: 13px;
+  transition: background-color 0.6s, opacity 0.2s; /* Adjust transition duration here */
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.19);
+
+
+}
+
+.CSM_C_students {
+  position: absolute;
+  top: 20px; /* Adjust the top position as needed */
+  right: 160px; /* Adjust the right position as needed */
+  background-color: #1a3ddb;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 90px; /* Increase the border-radius to make it a capsule shape */
+  font-size: 13px;
+  transition: background-color 0.6s, opacity 0.2s; /* Adjust transition duration here */
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.19);
+
+
+}
+
+
+.Lessons{
+  position: absolute;
+  top: 20px; /* Adjust the top position as needed */
+  right: 282px; /* Adjust the right position as needed */
+  background-color: #1a3ddb;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  padding-left: 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 90px; /* Increase the border-radius to make it a capsule shape */
+  font-size: 13px;
+  transition: background-color 0.6s, opacity 0.2s; /* Adjust transition duration here */
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.19);
+}
+
+.Lessons:hover {
+  background-color: #7481d8; /* Change to a different color on hover */
+  opacity: 0.9; /* Reduce opacity on hover to create a fading effect */
+}
+
+.login-register-button:hover {
+  background-color: #7481d8; /* Change to a different color on hover */
+  opacity: 0.9; /* Reduce opacity on hover to create a fading effect */
+}
+
+.CSM_C_students:hover {
+  background-color: #7481d8; /* Change to a different color on hover */
+  opacity: 0.9; /* Reduce opacity on hover to create a fading effect */
+}
+
+  </style>
+</head>
+<body>
+
+<button class="Lessons" onclick="Lessons()"><b>Lessons</b></button>
+<button class="CSM_C_students" onclick="redirectToStudentsData()"><b>Student List</b></button>
+<button class="login-register-button" onclick="redirectToLogin()"><b>Login/Register</b></button>
+
+
+<div class="container" onclick="toggleNav()">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+
+<div class="icon-bar" id="mySidebar">
+  <a class="active" href="index.html"><i class="fa fa-home"></i> Home</a>
+  <a href="AboutUs.html"><i class="fa fa-info"></i> About us</a> 
+  <a href="#"><i class="fa fa-search"></i> Explore</a> 
+  <a href="timetable.html" target="_blank"><i class="fa fa-times"></i>Timetable</a>
+  <a class="contact-us" href="contact.html"><i class="fa fa-envelope" onclick="Contact()"></i> Contact me</a>
+   <!-- "Contact us" link at the bottom -->
+</div>
+
+<div class="moving-text"></div>
+
+<!-- Add the "Notices" heading -->
+<button class="notices-heading">Notices</button>
+<ul>
+  <li>
+<!-- Add the "Results" text link -->
+<a href="https://www.vvitguntur.com/aca-examcell/latest-results/autonomous" style="position: absolute; top: 33%; right: 190px; transform: translateY(-50%); font-size: 22px; color: #21015d; text-decoration: underline;">Semester Results (link)</a>
+</li>
+<!--  CodeTantra link-->
+<li>
+<a href="https://vvit.codetantra.com/login.jsp" style="position: absolute; top: 38%; right: 180px; transform: translateY(-50%); font-size: 22px; color: #1b004d; text-decoration: underline;">VVIT CodeTantra (link)</a>
+</li>
+<li>
+  <a href="https://www.vvitguntur.com/images/documents/Syllabus/R20/R20_CSM_FINAL_SYLLABUS_6.0.pdf" style="position: absolute; top: 43%; right: 180px; transform: translateY(-50%); font-size: 22px; color: #1c004f; text-decoration: underline;">CS(AIML) Syllabus link</a>
+</li>
+</ul>
+
+<script>
+function toggleNav() {
+  var sidebar = document.getElementById("mySidebar");
+  sidebar.classList.toggle("show");
+}
+
+// Close the sidebar when clicking outside of it
+document.addEventListener('click', function(event) {
+  var sidebar = document.getElementById("mySidebar");
+  var container = document.querySelector(".container");
+  
+  if (!container.contains(event.target) && !sidebar.contains(event.target)) {
+    sidebar.classList.remove("show");
+  }
+});
+
+function redirectToLogin() {
+  window.location.href = 'login.html'; /* Replace 'login.html' with the URL of your login page */
+}
+
+function redirectToStudentsData(){
+  window.location.href = "students.html"; /* Replace 'students.html' with the URL of your students */
+}
+
+function Lessons(){
+  window.location.href ="lessons.html" /* Replace 'users.html' with the URL */
+}
+
+</script>
+
+</body>
+</html>

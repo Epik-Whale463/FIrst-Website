@@ -1,0 +1,70 @@
+<!-- toolbar.html -->
+<div class="container" onclick="toggleNav()">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  
+  <div class="icon-bar" id="mySidebar">
+    <a class="active" href="index.html"><i class="fa fa-home"></i> Home</a>
+    <a href="#"><i class="fa fa-info"></i> About us</a> 
+    <a href="#"><i class="fa fa-search"></i> Explore</a> 
+    <a href="#"><i class="fa fa-heart"></i> Donate</a>
+    <a class="contact-us" href="#"><i class="fa fa-envelope"></i> Contact us</a>
+  </div>
+  
+  <style>
+    /* Add more styling and animations here */
+    .icon-bar {
+      width: 250px;
+      background-color: rgba(0, 0, 0, 0.9);
+      overflow: hidden;
+      transition: 0.3s; /* Faster transition for smoother animations */
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: 100%;
+      z-index: 1;
+    }
+  
+    /* Style for individual icons */
+    .icon-bar a {
+      text-align: left;
+      padding: 20px;
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 24px;
+      display: block;
+      text-decoration: none;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      transform: translateX(-250px); /* Initial position outside the viewport */
+    }
+  
+    /* Add hover effect for individual icons */
+    .icon-bar a:hover {
+      background-color: #04AA6D;
+    }
+  
+    /* Add animation to slide in the icons */
+    .icon-bar.show a {
+      transform: translateX(0); /* Slide in from the left */
+    }
+  </style>
+  
+  <script>
+  function toggleNav() {
+    var sidebar = document.getElementById("mySidebar");
+    sidebar.classList.toggle("show");
+  }
+  
+  // Close the sidebar when clicking outside of it
+  document.addEventListener('click', function(event) {
+    var sidebar = document.getElementById("mySidebar");
+    var container = document.querySelector(".container");
+    
+    if (!container.contains(event.target) && !sidebar.contains(event.target)) {
+      sidebar.classList.remove("show");
+    }
+  });
+  </script>
+  
