@@ -156,6 +156,10 @@
     .social i {
       margin-right: 4px;
     }
+
+    .signup {
+      
+    }
   </style>
 </head>
 <body>
@@ -164,14 +168,18 @@
     <div class="shape"></div>
 </div>
 <form action="connect.php" method="post">
-    <h3><b>Register Here</b></h3>
+    <h3><b>Login here</b></h3>
     <label for="username">Username</label>
     <input type="text" placeholder="Email or Phone" id="username" name="username">
     <label for="password">Password</label>
     <input type="password" placeholder="Password" id="password" name="password">
     <!-- Updated login button -->
-    <button>Log In</button>
+    <button id="login-button">Log In</button>
+    <a href="signup.html" class="signup">Don't have an account? &nbsp&nbsp&nbspSign up</a>
 </form>
+
+<!-- Signup link -->
+
 
 <!-- Include the toolbar -->
 <div id="toolbar"></div>
@@ -189,6 +197,25 @@ toolbarRequest.onload = function() {
 };
 toolbarRequest.open("GET", "toolbar.html", true);
 toolbarRequest.send();
+
+// JavaScript for handling login
+document.addEventListener("DOMContentLoaded", function () {
+  const loginForm = document.getElementById("login-form");
+  const loginButton = document.getElementById("login-button");
+
+  loginButton.addEventListener("click", function () {
+    // Get the entered username and password
+    const enteredUsername = document.getElementById("username").value;
+    const enteredPassword = document.getElementById("password").value;
+
+    // Check if the entered credentials match the stored data
+    if (localStorage.getItem(enteredUsername) === enteredPassword) {
+      alert("Login successful!");
+    } else {
+      alert("Invalid credentials. Please try again.");
+    }
+  });
+});
 </script>
 
 </body>
